@@ -40,6 +40,12 @@ class DatasetEnv(gym.Env):
 ##### main function #####
 #self.dataset = dill.load_session('tf_NSL_KDD20_Load_withWs.pkl') ###
 
+##Use your environment
+#import gym
+#import gym_dataset
+#env = gym.make('dataset-v0')
+
+
 #make() for creating the environment and returning a reference to it.
 #step() for taking a step in the environment and returning a tuple (observation images, reward float value, done boolean, any other info).
 #reset() for resetting the environment to the initial state.
