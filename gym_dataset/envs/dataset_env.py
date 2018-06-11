@@ -4,14 +4,13 @@ from gym.utils import seeding
 import pandas as pd
 import dill
 import os
-os.chdir("W:/UVA/InvestigacionUVA/CODIGO/reinforcementlearning/flappybird")#### cambiar a dir donde está el .pkl
-
+os.chdir("C:/[MACHINE LEARNING bln]/Manuel_códigopapersydatasets/vae")#### cambiar a dir donde está el .pkl
 
 class DatasetEnv(gym.Env):
   metadata = {'render.modes': ['human']}
 
   def __init__(self):
-    self.dataset = dill.load_session('NSL_KDD_Load.pkl') ###
+    self.dataset = dill.load_session('tf_NSL_KDD20_Load_withWs.pkl') ###
     ##
   def step(self, action, labels, estadoact_index):
     if labels[estadoact_index] == action: 
@@ -37,7 +36,9 @@ class DatasetEnv(gym.Env):
     return 2
   def get_observation_space(self):
     return dataset.shape[0] #comprobar 
-  
+
+##### main function #####
+#self.dataset = dill.load_session('tf_NSL_KDD20_Load_withWs.pkl') ###
 
 #make() for creating the environment and returning a reference to it.
 #step() for taking a step in the environment and returning a tuple (observation images, reward float value, done boolean, any other info).
