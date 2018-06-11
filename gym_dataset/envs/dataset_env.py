@@ -1,12 +1,15 @@
 import gym
 from gym import error, spaces, utils
 from gym.utils import seeding
+import pandas as pd
+import dill
+
 
 class DatasetEnv(gym.Env):
   metadata = {'render.modes': ['human']}
 
   def __init__(self):
-    self.dataset
+    self.dataset = dill.load_session('NSL_KDD_Load.pkl') ###
     ##
   def step(self, action, labels, estadoact_index):
     if labels[estadoact_index] == action: 
