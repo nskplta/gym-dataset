@@ -26,7 +26,7 @@ class DatasetEnv(gym.Env):
         if i==dataset.shape[0]
           episode_over=1
     return observation, reward, episode_over
-  def reset(self, dataset):
+  def reset(self):
     self.muestraelegida = np.random.choice(dataset.shape[0], 1, replace=False)
     self.muestraelegida = np.asscalar(self.muestraelegida)
     self.initial_state = dataset[self.muestraelegida, :]
