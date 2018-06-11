@@ -3,6 +3,8 @@ from gym import error, spaces, utils
 from gym.utils import seeding
 import pandas as pd
 import dill
+import os
+os.chdir("W:/UVA/InvestigacionUVA/CODIGO/reinforcementlearning/flappybird")#### cambiar a dir donde está el .pkl
 
 
 class DatasetEnv(gym.Env):
